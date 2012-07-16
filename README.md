@@ -1,1 +1,1 @@
-Rwanda Map fork of https://github.com/mapbox/weekend-picks-template. 
+Rwanda Map fork of https://github.com/mapbox/dc-properties-template.
