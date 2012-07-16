@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>DC's Changing Landscape</title>
+    <title>1994 Rwandan Genocide - GenoDynamics Death Estimates</title>
     <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
     <link rel="stylesheet" href="css/map.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -13,54 +13,30 @@
     <div id="content">
         <div id='branding'></div>
         <div id="about">
-            <h1>DC's Changing Landscape</h1>
-            <p>Over the past few years, Washington DC has been undergoing economic, social, and demographic shifts. Property values in particular have been changing rapidly as parts of the city undergo aggressive development. See how these factors are shaping DC.</p>
-            <div data-control="geocode" id="search">
-                <form class="geocode">
-                    <input placeholder="Search for an address" type="text">
-                    <input type="submit" />
-                    <div id="geocode-error"></div>
-                </form>
-            </div>
+            <h1>Mapping the Rwandan Genocide</h1>
+            <p>This map displays estimated levels of violence over the course of the 1994 Rwandan Genocide across each of the country's communes. These estimations are based upon data from local grassroots networks, African and international human rights NGOs, Rwandan ministries, and the U.N. amongst other sources. Overall, this research represents a decade-plus effort by <a href="http://newsinfo.nd.edu/for-the-media/nd-experts/faculty/christian-davenport/">Christian Davenport</a> and <a href="http://www.lsa.umich.edu/polisci/people/faculty/ci.stamallan_ci.detail">Allan Stam</a>, and builds upon other data-driven human rights studies such as those pioneered by <a href="http://www.foreignpolicy.com/articles/2012/02/27/the_body_counter?page=full">Patrick Ball</a>. The statistical estimations were performed by <a href="http://www.quantoid.net/">David Armstrong</a>. My master's thesis using a prior version of the data is available <a href="http://www.scribd.com/doc/31781313/Environment-and-Conflict-The-Case-of-the-1994-Rwandan-Genocide">here</a>.</p>
         </div>
     </div>
     
     <div id="projects" class="layers">
-       <a data-control="layer" href="#building">Building Permits, 2011</a>
-       <a data-control="layer" href="#construction">City Construction Projects, 2011</a>
-    </div>
-    <div id="crime" class="layers">
-       <a data-control="layer" href="#crime">Total Crime, 2011</a>
-       <a data-control="layer" href="#robbery">Robbery, 2011</a>
-       <a data-control="layer" href="#theft">Theft, 2011</a>
-       <a data-control="layer" href="#auto">Theft from Auto, 2011</a>
-
+       <a data-control="layer" href="#upper_est">Upper Estimate</a>
+       <a data-control="layer" href="#median_est">Median Estimate</a>
+       <a data-control="layer" href="#lower_est">Lower Estimate</a>
     </div>
     <div id="map" class="map">
         <div class="wax-legends">
             <div class="wax-legend" style="display: block; ">
                 <div class="scale">
-                    <label><a href="http://data.dc.gov/Main_DataCatalog.aspx?id=10">% Change in property value '10-'11</a></label>
-                    <div><img src="img/grid-scale-2.png" /></div>
+                    <label><a href="http://data.dc.gov/Main_DataCatalog.aspx?id=10">Estimated Number of Deaths by Commune (April - August 1994)</a></label>
+                    <div><img src="img/rwanda_scale_border.png" /></div>
                     <div>
-                        <span>< -20</span>
-                        <span>< -10</span>
-                        <span>< -5</span>
-                        <span>< 0</span>
-                        <span>0</span>
-                        <span>> 0</span>
-                        <span>> 5</span>
-                        <span>> 10</span>
-                        <span>> 20</span>
+                        <span>< 100</span>
+                        <span>< 1000</span>
+                        <span>< 2500</span>
+                        <span>< 5000</span>
+                        <span>< 10000</span>
+                        <span>10000+</span>
                     </div>
-                </div>
-                <div>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAa0lEQVQIHWNkaPjPpPhitcn/f4xZDP8ZXjD8/tLBIvhsNe9/BqZ1jAwM0gyMDL8ZWHhYmLj/fmIGCzCAwH/mf8wM6kzizH8////PMBEsxvD/HdPf/5MY/wNFGMNWM0tzfhdgZeL7e39+wAcAdhYlGm+mTIMAAAAASUVORK5CYII=" style="margin-bottom: 2px;">
-                    <label><a href="http://data.dc.gov/Main_DataCatalog.aspx?id=5">Construction project</a></label>
-                </div>
-                <div>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAV0lEQVQIHWP8//8/AxgwMjIyQDmM/52D4xkYmGYzMDIwAwX7GfasLgEKhn4GCvBAlDP8Y3h/j4MJKPAXKsAAVPmP4ezZP0wM/xkigIIfgfR3BgbGcpC5AExlIK8M2/cpAAAAAElFTkSuQmCC" style="margin-bottom: 2px;">
-                    <label><a href="http://data.dc.gov/Main_DataCatalog.aspx?id=3">Crime incident</a></label>
                 </div>
             </div>
         </div>
@@ -77,17 +53,16 @@
     
     <!-- Site configuration -->
     <script type="text/javascript">
-    
-        // Make a new map in the #map element
+
         var main = Map('map', {
             // Specify the MapBox API url
-            api: 'http://a.tiles.mapbox.com/v3/examples.map-20v6611k,mapbox.dc-property-values.jsonp',
+            api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_n.jsonp',
             center: {
-                lat: 38.9090033656251,      // Intial center point and zoom level.
-                lon: -77.014396158891,      // To find coordinates and zoom levels
-                zoom: 13                    // try: http://www.getlatlon.com
+                lat:  -2.230106,      // Intial center point and zoom level.
+                lon: 30.058769,      // To find coordinates and zoom levels
+                zoom: 9                    // try: http://www.getlatlon.com
             },
-            zoomRange: [0, 15],             // Limit zooming on the map to these levels
+            zoomRange: [9, 11],             // Limit zooming on the map to these levels
             features: [                     // Map features (see readme.md)
                 'zoomwheel',
                 'movetips',
@@ -96,35 +71,26 @@
                 'share'
             ]
         });
-        
+
+	// main.coordLimits = (new wax.mm.connector(tilejson)).outerLimits();
+		
+
         // Make a new layer switch for the map named `main`. Each layer gets
         // a name and an object of settings. The layers are bound by name to
         // the href hash of an element with a `data-control='layer'`, ex:
         // <a data-control="layer" href="#building">Building Permits, 2011</a>
         main.layers({
-            building: {                     // The name of the layer
-                // If api is specified, this map layer will be displayed
-                // on top of the base map specified when the map was initialized
-                api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-building.jsonp',
-                center: {                   // Optionally reposition the map.
-                    lat: 38.910606275724,   // New center point and zoom level
-                    lon: -77.00126406355,   // for the map. Specific either
-                    zoom: 14,               // lat and lon, zoom, or both.
-                    ease: 500               // Optional time to animimate moving
-                }                           // the map in milliseconds.
-            },
-            construction: { 
-                api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-construction.jsonp',
-                center: { zoom: 12, ease: 1000 }
-            },
-            crime: { 
-                api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-crime.jsonp',
-                center: { zoom: 13, ease: 1000 }
-             },
-            robbery: { api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-crime-robbery.jsonp' },
-            theft: { api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-crime-theft.jsonp' },
-            auto: { api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-crime-auto.jsonp' }
+			lower_est: {
+				api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_l.jsonp',
+			},
+			median_est: {
+				api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_m.jsonp',
+			},
+			upper_est: {
+				api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda-u.jsonp',
+			}
          });
+
                  
     </script>
 </body>

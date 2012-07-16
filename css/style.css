@@ -80,7 +80,8 @@ a {
 
 h1 {
     display: block;
-    margin: 20px 0;
+    margin-top: 20px;
+    margin-bottom: 15px;
     }
 
 p {
@@ -105,7 +106,7 @@ body > div {
     width: 150px;
     left: 0;
     float: left;
-    background: url(../img/logo.png) 30px 60px no-repeat;
+    background: url(../img/rwanda_old_flag.gif) 20px 60px no-repeat;
     }
 
 #content {
@@ -123,7 +124,7 @@ body > div {
     
 #about {
     margin-left: 150px;
-    width: 689px;
+    width: 750px;
     float: left;
     padding: 0 20px;
     border-left: 1px solid #bbb;
@@ -146,15 +147,7 @@ body > div {
     
 .layers a:hover, .layers a:focus, .layers a.active {
     border-left: 5px solid #333;
-    background: #2da0ef;
-    color: white;
-    }
-
-.layers#crime {top: 220px;}
-
-#crime.layers a:hover, #crime.layers a:focus, #crime.layers a.active {
-    border-left: 5px solid #333;
-    background: #e34f3f;
+    background: rgb(80, 80, 80);
     color: white;
     }
     
@@ -163,59 +156,6 @@ body > div {
     width: 113px;
     float: left;
     margin-right: 20px;
-    }
-
-#search {
-    height: 30px;
-    margin-bottom: 20px;
-    }
-
-form.geocode input[type=text] {
-    font-size: .85em;
-    color: #333;
-    height: 18px;
-    width: 200px;
-    display: block;
-    float: left;
-    padding: 5px;
-    margin: 0;
-    border: 1px solid  #ccc;
-    }
-    
-form.geocode input[type=submit] {
-    background: #2da0ef url(../img/search.png) no-repeat -0px -0px;
-    text-indent: -9999px;
-    width: 30px;
-    height: 30px;
-    display: block;
-    border: none;
-    margin: 0;
-    padding: 0;
-    float: left;
-    cursor: pointer;
-    }
-    
-    form.geocode input[type=submit]:hover { background-color:#333; }
-	form.geocode input[type=submit]:active { background-color:#000; }
-	
-form.geocode.loading input[type=submit] {
-    background: url(img/ajax-loader.gif) no-repeat 50% 50%;
-    border-color:#bbb;
-    background-color:#ddd;
-    box-shadow:inset rgba(0,0,0,0.1) 0px 1px 3px;
-    -moz-box-shadow:inset rgba(0,0,0,0.1) 0px 1px 3px;
-    -webkit-box-shadow:inset rgba(0,0,0,0.1) 0px 1px 3px;
-    }
-    
-#geocode-error {
-    display: none;
-    float: left;
-    position: relative;
-    top: 1em;
-    margin-left: 20px;
-    color: #e34f4f;
-    font-size: 1em;
-    line-height: 0em;
     }
     
 a.zoomer {
@@ -236,19 +176,19 @@ a.zoomer {
     -webkit-box-shadow:none;
     left: auto;
     top: auto;
+    margin: 10px;
     right: 10px;
-    border: none;
     color: white;
     font-size: 11px;
-    width: 200px;
+    width: 250px;
     margin-left: -100px;
-    line-height: 16px;
+    line-height: 4px;
     margin-bottom: 20px;
     overflow: visible;
     }
 
 .wax-tooltip .inner {
-    padding: 4px 9px;
+    padding: 14px 9px;
     -o-border-radius: 3px;
     -ms-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -256,13 +196,13 @@ a.zoomer {
     border-radius: 3px;
     background: #333;
     z-index: 2;
-    text-transform: lowercase;
+/*    text-transform: lowercase;*/
     }
     
-.wax-tooltip .inner:first-letter {
+/*.wax-tooltip .inner:first-letter {
     text-transform: uppercase;
     }
-    
+*/    
 .wax-tooltip .desc2 { font-style: italic; }
 
 .wax-tooltip .offense { font-weight: 700; }
@@ -308,7 +248,7 @@ a.zoomer {
     }
 
 .wax-legends .wax-legend {
-    width: 275px;
+    width: 245px;
     }
 
 .wax-legends .scale img { 
@@ -328,7 +268,7 @@ a.zoomer {
     } 
 .wax-legend .scale span {
     display: block;
-    width: 30px;
+    width: 40px;
     float: left;
     text-align: center;
     font-size: 9px;
