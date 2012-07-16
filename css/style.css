@@ -106,7 +106,7 @@ body > div {
     width: 150px;
     left: 0;
     float: left;
-    background: url(../img/rwanda_old_flag.gif) 20px 60px no-repeat;
+    background: url('../img/rwanda_old_flag.gif') 20px 60px no-repeat;
     }
 
 #content {
