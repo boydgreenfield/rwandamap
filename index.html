@@ -19,9 +19,9 @@
     </div>
     
     <div id="projects" class="layers">
-       <a data-control="layer" href="#upper_est">Upper Estimate</a>
-       <a data-control="layer" href="#median_est">Median Estimate</a>
-       <a data-control="layer" href="#lower_est">Lower Estimate</a>
+       <a data-control="layer" href="#upper_est">Toggle Violence Estimate</a>
+       <!-- <a data-control="layer" href="#median_est">Median Estimate</a>
+       <a data-control="layer" href="#lower_est">Lower Estimate</a> */ -->
     </div>
     <div id="map" class="map">
         <div class="wax-legends">
@@ -60,9 +60,9 @@
             center: {
                 lat:  -2.230106,      // Intial center point and zoom level.
                 lon: 30.058769,      // To find coordinates and zoom levels
-                zoom: 9                    // try: http://www.getlatlon.com
+                zoom: 8                    // try: http://www.getlatlon.com
             },
-            zoomRange: [9, 11],             // Limit zooming on the map to these levels
+            zoomRange: [8, 11],             // Limit zooming on the map to these levels
             features: [                     // Map features (see readme.md)
                 'zoomwheel',
                 'movetips',
@@ -80,12 +80,12 @@
         // the href hash of an element with a `data-control='layer'`, ex:
         // <a data-control="layer" href="#building">Building Permits, 2011</a>
         main.layers({
-			lower_est: {
-				api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_l.jsonp',
-			},
-			median_est: {
-				api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_m.jsonp',
-			},
+			// lower_est: {
+			//	api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_l.jsonp',
+			// },
+			// median_est: {
+			// 	api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_m.jsonp',
+			// },
 			upper_est: {
 				api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda-u.jsonp',
 			}
