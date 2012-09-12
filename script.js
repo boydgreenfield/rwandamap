@@ -13,7 +13,20 @@
                 handlers.push(new MM.MouseWheelHandler());
             }
 
+
+
             MM_map = new MM.Map(el, new wax.mm.connector(t), null, handlers);
+
+            // Add coordinate limits: 25.6476,-4.8146,33.9093,-0.0083 (left, bottom, right, top)
+            var topLeft = new MM.Location(-0.0083, 25.6475)
+            var bottomRight = new MM.Location(-4.8146, 33.9093)
+
+            MM_map.coordLimits = [
+              MM_map.locationCoordinate(topLeft).zoomTo(t.minzoom),
+              MM_map.locationCoordinate(bottomRight).zoomTo(t.maxzoom)
+            ];
+
+            // Back to default from MapBox's script
             MM_map.setCenterZoom({
                 lat: (l.center) ? l.center.lat : t.center[1],
                 lon: (l.center) ? l.center.lon : t.center[0]
@@ -24,6 +37,8 @@
             } else {
                 MM_map.setZoomRange(t.minzoom, t.maxzoom);
             }
+
+
 
             wax.mm.attribution(MM_map, t).appendTo(MM_map.parent);
 
@@ -82,7 +97,7 @@
 
         wax.tilejson(l.api, function(t) {
             var level = (l.level === 'base') ? 0 : 1;
-            
+
             try {
                 MM_map.setLayerAt(level, new wax.mm.connector(t));
             } catch (e) {
@@ -206,7 +221,7 @@ $(function() {
         e.preventDefault();
         if($this.hasClass('active')) {
             $('[data-control="layer"]').removeClass('active');
-            window[m].removeOverlay(id);        
+            window[m].removeOverlay(id);
         } else {
             $('[data-control="layer"]').removeClass('active');
             $this.addClass('active');
