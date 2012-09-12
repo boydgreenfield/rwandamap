@@ -19,9 +19,9 @@
     </div>
     
     <div id="projects" class="layers">
-       <a data-control="layer" href="#upper_est">Toggle Violence Estimate</a>
-       <!-- <a data-control="layer" href="#median_est">Median Estimate</a>
-       <a data-control="layer" href="#lower_est">Lower Estimate</a> */ -->
+       <a data-control="layer" href="#upper_est">Upper Estimate</a>
+       <a data-control="layer" href="#median_est">Median Estimate</a>
+       <a data-control="layer" href="#lower_est">Lower Estimate</a>
     </div>
     <div id="map" class="map">
         <div class="wax-legends">
@@ -80,12 +80,12 @@
         // the href hash of an element with a `data-control='layer'`, ex:
         // <a data-control="layer" href="#building">Building Permits, 2011</a>
         main.layers({
-			// lower_est: {
-			//	api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_l_updated.jsonp',
-			// },
-			// median_est: {
-			// 	api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_m_updated.jsonp',
-			// },
+			lower_est: {
+				api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_l_updated.jsonp',
+			},
+			median_est: {
+			 	api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_m_updated.jsonp',
+			},
 			upper_est: {
 				api: 'http://a.tiles.mapbox.com/v3/boydgreenfield.rwanda_u_updated.jsonp',
 			}
